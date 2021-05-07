@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Redirect } from 'react-router'
+import './DashboardPage.css'
 
 export default function DashboardPage({ activeUser }) {
     if (!activeUser) {

@@ -1,23 +1,40 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Alert, Button, Form } from 'react-bootstrap';
+import { Link, Redirect } from 'react-router-dom';
 import './LoginPage.css'
 
-function LoginPage(props) {
+function LoginPage({activeUser, users, onLogin}) {
 
     const [email, setEmail] = useState("");
     const [pwd, setPwd] = useState("");
+    const [showInvalidLogin, setShowInvalidLogin] = useState(false);
+
+    if (activeUser) {
+        return <Redirect to="/dashboard"/>
+    }
 
     function login(e) {
         e.preventDefault();
-        console.log(email);
-        console.log(pwd);
+        
+        for (const user of users) {
+            if (user.login(email, pwd)) {
+                activeUser = user;
+                break;
+            }
+        }
+
+        if (activeUser) {
+            onLogin(activeUser);
+        } else {
+            setShowInvalidLogin(true);
+        }
     }
 
     return (
         <div className="p-login">
         <h1>Login to HOA</h1>
         <p>or <Link to="/signup">create an account</Link></p>
+        {showInvalidLogin ? <Alert variant="danger">Invalid Credentials!</Alert> : null}
         <Form  onSubmit={login}>
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>

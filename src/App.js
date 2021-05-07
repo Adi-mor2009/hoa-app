@@ -7,10 +7,14 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import MainNavbar from './components/MainNavbar/MainNavbar';
 import { useState } from 'react';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
+import usersJSON from './data/users.json'
+import UserModel from './model/UserModel';
 
 function App() {
   // const [activeUser, setActiveUser] = useState(null);
-  const [activeUser, setActiveUser] = useState({id:"1", name:"Adi Mor", email:"adi@adi.com", apartement:"1", role:"admin"});
+  //const [activeUser, setActiveUser] = useState({id:"1", name:"Adi Mor", email:"adi@adi.com", apartement:"1", role:"admin"});
+  const [users, setUsers] = useState(usersJSON.map(plainUser => new UserModel(plainUser)));
+  const [activeUser, setActiveUser] = useState(users[0]);
   return (
     <div className="app">
       <HashRouter>
@@ -19,7 +23,7 @@ function App() {
             <MainNavbar  activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>
             <HomePage/>
           </Route>
-          <Route exact path="/login"><LoginPage/></Route>
+          <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={user => setActiveUser(user)}/></Route>
           <Route exact path="/signup" ><SignupPage/></Route>
           <Route exact path="/dashboard" >
             <MainNavbar activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>

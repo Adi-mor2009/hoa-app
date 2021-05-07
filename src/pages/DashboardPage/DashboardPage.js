@@ -1,9 +1,15 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
+import { Redirect } from 'react-router'
 
-export default function DashboardPage() {
+export default function DashboardPage({ activeUser }) {
+    if (!activeUser) {
+        return <Redirect to="/" />
+    }
+
     return (
-        <div>
-            <h1>DashboardPage</h1>
-        </div>
+        <Container className="p-dashboard">
+            <h1>{activeUser.name}'s dashboard</h1>
+        </Container>
     )
 }

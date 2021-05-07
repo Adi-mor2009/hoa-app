@@ -16,14 +16,14 @@ function App() {
       <HashRouter>
         <Switch>
           <Route exact path="/" >
-            <MainNavbar  activeUser={activeUser}/>
+            <MainNavbar  activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>
             <HomePage/>
           </Route>
           <Route exact path="/login"><LoginPage/></Route>
           <Route exact path="/signup" ><SignupPage/></Route>
           <Route exact path="/dashboard" >
-            <MainNavbar activeUser={activeUser}/>
-            <DashboardPage/>
+            <MainNavbar activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>
+            <DashboardPage activeUser={activeUser}/>
           </Route>
           {/* <Route exact path="/tenants" ><TenantsPage/></Route>
           <Route exact path="/messages" ><MessagesdPage/></Route>

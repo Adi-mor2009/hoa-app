@@ -1,18 +1,58 @@
 .p-signup {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.p-signup > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p-form-signup {
+    position: absolute;
     width: 500px;
+    height: 100%;
     margin: 50px auto; 
     padding: 50px;
     border-radius: 10%;
-    background-image: linear-gradient( rgb(171, 171, 172), rgb(230, 233, 235));
-    color: white;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, .3) 0%, rgba(231, 231, 231, .3) 22.39%, rgba(209, 209, 209,  .3) 42.6%, rgba(182, 182, 182, .3) 79.19%, rgba(156, 156, 156, .3) 104.86%);
+    /* background-image: linear-gradient( rgb(171, 171, 172), rgb(230, 233, 235)); */
+    color: black;
+    right: 30%;
+    top: -11%;
+    background-color: transparent;
+    /* opacity: 0.5; */
 } 
 
-.p-signup > h1 {
+/* .p-home-bg-img > img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+} */
+
+.p-form-signup > h1 {
     font-weight: bold;
     text-align: center;
     font-family: 'Oswald', sans-serif;
 }
 
-.p-signup > p {
+.p-form-signup > p {
     text-align: center;
+    font-weight: bold;
 }
+
+.p-form-signup .form-group> label {
+    font-weight: bold; 
+}
+
+.p-form-signup .form-group {
+    margin-bottom: 0;
+}
+
+
+
+/* .p-form-signup .form-group .input-group {
+    border: orange;
+} */

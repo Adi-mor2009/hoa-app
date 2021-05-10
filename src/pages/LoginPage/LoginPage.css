@@ -3,7 +3,8 @@
     margin: 50px auto; 
     padding: 50px;
     border-radius: 10%;
-    background-image: linear-gradient( rgb(171, 171, 172), rgb(230, 233, 235));
+    background-image: linear-gradient( rgb(171, 172, 172), rgb(230, 233, 235));
+    /* background-image: linear-gradient( rgb(9, 241, 59), rgb(230, 233, 235)); */
     color: white;
 } 
 

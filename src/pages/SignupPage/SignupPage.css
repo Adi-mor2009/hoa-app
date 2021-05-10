@@ -1,0 +1,18 @@
+.p-signup {
+    width: 500px;
+    margin: 50px auto; 
+    padding: 50px;
+    border-radius: 10%;
+    background-image: linear-gradient( rgb(171, 171, 172), rgb(230, 233, 235));
+    color: white;
+} 
+
+.p-signup > h1 {
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.p-signup > p {
+    text-align: center;
+}

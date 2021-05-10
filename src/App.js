@@ -9,12 +9,24 @@ import { useState } from 'react';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import usersJSON from './data/users.json'
 import UserModel from './model/UserModel';
+import Parse from 'parse';
 
 function App() {
+  //manually
   // const [activeUser, setActiveUser] = useState(null);
   //const [activeUser, setActiveUser] = useState({id:"1", name:"Adi Mor", email:"adi@adi.com", apartement:"1", role:"admin"});
-  const [users, setUsers] = useState(usersJSON.map(plainUser => new UserModel(plainUser)));
-  const [activeUser, setActiveUser] = useState(users[0]);
+  //how to use json file
+  // const [users, setUsers] = useState(usersJSON.map(plainUser => new UserModel(plainUser)));
+  // const [activeUser, setActiveUser] = useState(users[0]);
+  //Parse save active user in local storage, afrer refresh the user still logged in
+  const [activeUser, setActiveUser] = useState(UserModel.activeUser() ? new UserModel(UserModel.activeUser()) : null);
+
+  //Inorder to clean local storage we need to do parse logout
+  function handleLogout() {
+    setActiveUser(null);
+    UserModel.logout();
+  }
+
   return (
     <div className="app">
       <HashRouter>
@@ -23,10 +35,11 @@ function App() {
             <MainNavbar  activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>
             <HomePage/>
           </Route>
-          <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={user => setActiveUser(user)}/></Route>
-          <Route exact path="/signup" ><SignupPage/></Route>
+          {/* Using json <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={user => setActiveUser(user)}/></Route> */}
+          <Route exact path="/login"><LoginPage activeUser={activeUser} onLogin={user => setActiveUser(user)}/></Route>
+          <Route exact path="/signup" ><SignupPage activeUser={activeUser} onLogin={user => setActiveUser(user)}/></Route>
           <Route exact path="/dashboard" >
-            <MainNavbar activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
             <DashboardPage activeUser={activeUser}/>
           </Route>
           {/* <Route exact path="/tenants" ><TenantsPage/></Route>

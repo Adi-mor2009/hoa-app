@@ -4,7 +4,7 @@ import { Redirect } from 'react-router';
 import './SignupPage.css'
 import Parse from 'parse';
 import UserModel from '../../model/UserModel';
-import image from '../../asserts/signup.jpg'
+import image from '../../asserts/signup.jpg';
  
 
 function SignupPage({ activeUser, onLogin }) {
@@ -61,7 +61,7 @@ function SignupPage({ activeUser, onLogin }) {
     }
 
     return (
-        <Container className="p-signup">
+        <Container fluid className="p-signup">
             {/* <div className="p-home-bg-img"> */}
                 <img  className="p-home-img" src={image}></img>
                 <div className="p-form-signup">

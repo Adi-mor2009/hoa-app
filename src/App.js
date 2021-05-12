@@ -10,6 +10,10 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import usersJSON from './data/users.json'
 import UserModel from './model/UserModel';
 import Parse from 'parse';
+import IssuePage from './pages/IssuePage/IssuePage';
+import MessagePage from './pages/MessagePage/MessagePage';
+import VotingPage from './pages/VotingPage/VotingPage';
+import TenantsPage from './pages/TenantsPage/TenantsPage';
 
 function App() {
   //manually
@@ -41,6 +45,22 @@ function App() {
           <Route exact path="/dashboard" >
             <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
             <DashboardPage activeUser={activeUser}/>
+          </Route>
+          <Route exact path="/tenants" >
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
+            <TenantsPage activeUser={activeUser}/>
+          </Route>
+          <Route exact path="/messages" >
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
+            <MessagePage activeUser={activeUser}/>
+          </Route>
+          <Route exact path="/issue" >
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
+            <IssuePage activeUser={activeUser}/>
+          </Route>
+          <Route exact path="/vote" >
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
+            <VotingPage activeUser={activeUser}/>
           </Route>
           {/* <Route exact path="/tenants" ><TenantsPage/></Route>
           <Route exact path="/messages" ><MessagesdPage/></Route>

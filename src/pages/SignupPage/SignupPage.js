@@ -62,8 +62,8 @@ function SignupPage({ activeUser, onLogin }) {
 
     return (
         <Container fluid className="p-signup">
-            {/* <div className="p-home-bg-img"> */}
-                <img  className="p-home-img" src={image}></img>
+            <div className="p-signup-bg-img">
+                {/* <img  className="p-home-img" src={image}></img> */}
                 <div className="p-form-signup">
                     <h1>Welcome to HOA</h1>
                     <p>Please fill the follwoing detais</p>
@@ -143,7 +143,7 @@ function SignupPage({ activeUser, onLogin }) {
                     {/* <div className="p-home-bg-img">
                         <img  className="p-home-img" src={image}></img>
                     </div> */}
-                {/* </div> */}
+                </div>
             </div>
         </Container>
     );

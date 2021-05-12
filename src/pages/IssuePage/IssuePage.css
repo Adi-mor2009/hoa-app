@@ -1,0 +1,11 @@
+.p-issue {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.p-issue > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -9,6 +9,10 @@ function MainNavbar({activeUser, onLogout}) {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                     {activeUser ? <Nav.Link href="#/dashboard">Dashboard</Nav.Link> : null}
+                    {activeUser ? <Nav.Link href="#/tenants">Tenants</Nav.Link> : null}
+                    {activeUser ? <Nav.Link href="#/messages">Messages</Nav.Link> : null}
+                    {activeUser ? <Nav.Link href="#/issue">Issues</Nav.Link> : null}
+                    {activeUser ? <Nav.Link href="#/vote">Vote</Nav.Link> : null}
                 </Nav>
                 <Nav className="ml-auto">
                     {!activeUser ? <Nav.Link href="#/login">Login</Nav.Link> : null}

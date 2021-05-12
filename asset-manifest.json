@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/hoa-app/static/css/main.5fc63d44.chunk.css",
-    "main.js": "/hoa-app/static/js/main.8b1834a0.chunk.js",
-    "main.js.map": "/hoa-app/static/js/main.8b1834a0.chunk.js.map",
-    "runtime-main.js": "/hoa-app/static/js/runtime-main.d9e52613.js",
-    "runtime-main.js.map": "/hoa-app/static/js/runtime-main.d9e52613.js.map",
+    "main.css": "/hoa-app/static/css/main.7605361c.chunk.css",
+    "main.js": "/hoa-app/static/js/main.a6fb2020.chunk.js",
+    "main.js.map": "/hoa-app/static/js/main.a6fb2020.chunk.js.map",
+    "runtime-main.js": "/hoa-app/static/js/runtime-main.6e74ffa6.js",
+    "runtime-main.js.map": "/hoa-app/static/js/runtime-main.6e74ffa6.js.map",
     "static/css/2.98cd3b20.chunk.css": "/hoa-app/static/css/2.98cd3b20.chunk.css",
-    "static/js/2.997dc46d.chunk.js": "/hoa-app/static/js/2.997dc46d.chunk.js",
-    "static/js/2.997dc46d.chunk.js.map": "/hoa-app/static/js/2.997dc46d.chunk.js.map",
-    "static/js/3.e017591a.chunk.js": "/hoa-app/static/js/3.e017591a.chunk.js",
-    "static/js/3.e017591a.chunk.js.map": "/hoa-app/static/js/3.e017591a.chunk.js.map",
+    "static/js/2.a31150cf.chunk.js": "/hoa-app/static/js/2.a31150cf.chunk.js",
+    "static/js/2.a31150cf.chunk.js.map": "/hoa-app/static/js/2.a31150cf.chunk.js.map",
+    "static/js/3.dfa1653e.chunk.js": "/hoa-app/static/js/3.dfa1653e.chunk.js",
+    "static/js/3.dfa1653e.chunk.js.map": "/hoa-app/static/js/3.dfa1653e.chunk.js.map",
     "index.html": "/hoa-app/index.html",
     "static/css/2.98cd3b20.chunk.css.map": "/hoa-app/static/css/2.98cd3b20.chunk.css.map",
-    "static/css/main.5fc63d44.chunk.css.map": "/hoa-app/static/css/main.5fc63d44.chunk.css.map",
-    "static/js/2.997dc46d.chunk.js.LICENSE.txt": "/hoa-app/static/js/2.997dc46d.chunk.js.LICENSE.txt",
+    "static/css/main.7605361c.chunk.css.map": "/hoa-app/static/css/main.7605361c.chunk.css.map",
+    "static/js/2.a31150cf.chunk.js.LICENSE.txt": "/hoa-app/static/js/2.a31150cf.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/hoa-app/static/media/bootstrap-icons.0f69dcdb.woff",
     "static/media/issue.e5ac902a.jpg": "/hoa-app/static/media/issue.e5ac902a.jpg",
     "static/media/LoginPage.css": "/hoa-app/static/media/login.ffb2c68d.jpg",
@@ -25,10 +25,10 @@
     "static/media/vote.4ed8de48.jpg": "/hoa-app/static/media/vote.4ed8de48.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d9e52613.js",
+    "static/js/runtime-main.6e74ffa6.js",
     "static/css/2.98cd3b20.chunk.css",
-    "static/js/2.997dc46d.chunk.js",
-    "static/css/main.5fc63d44.chunk.css",
-    "static/js/main.8b1834a0.chunk.js"
+    "static/js/2.a31150cf.chunk.js",
+    "static/css/main.7605361c.chunk.css",
+    "static/js/main.a6fb2020.chunk.js"
   ]
 }

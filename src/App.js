@@ -40,8 +40,14 @@ function App() {
             <HomePage/>
           </Route>
           {/* Using json <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={user => setActiveUser(user)}/></Route> */}
-          <Route exact path="/login"><LoginPage activeUser={activeUser} onLogin={user => setActiveUser(user)}/></Route>
-          <Route exact path="/signup" ><SignupPage activeUser={activeUser} onLogin={user => setActiveUser(user)}/></Route>
+          <Route exact path="/login">
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
+            <LoginPage activeUser={activeUser} onLogin={user => setActiveUser(user)}/>
+            </Route>
+          <Route exact path="/signup" >
+            <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
+            <SignupPage activeUser={activeUser} onLogin={user => setActiveUser(user)}/>
+          </Route>
           <Route exact path="/dashboard" >
             <MainNavbar activeUser={activeUser}  onLogout={handleLogout}/>
             <DashboardPage activeUser={activeUser}/>

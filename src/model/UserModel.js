@@ -18,11 +18,13 @@ export default class UserModel {
 
     #parseUser  // storing the parseUser object as a private field (might need to use it)
     constructor(parseUser) {
+        debugger
         this.id = parseUser.id;
         this.name = parseUser.get("name");
         this.apartement = parseUser.get("apartement");
-        this.email = parseUser.get("email");
+        this.email = parseUser.get("email") ? parseUser.get("email") : parseUser.get("username");
         this.role = parseUser.get("role");
+        this.buildingId = parseUser.get("buildingId");
         this.#parseUser = parseUser;
     }
 

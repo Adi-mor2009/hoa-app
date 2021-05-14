@@ -31,8 +31,8 @@
 }
 
 .p-home .p-home-carousel {
-    width: 100%;
-    margin: auto;
+    /* width: 100%;
+    margin: auto; */
 }
 
 .p-home .p-home-carousel .carousel-inner .carousel-item > img {
@@ -79,6 +79,10 @@
     .p-home .p-home-carousel .carousel-inner .carousel-item .carousel-caption > p {
         padding: 20px;
         background-image: linear-gradient(90deg, rgba(255, 255, 255, .3) 0%, rgba(231, 231, 231, .3) 22.39%, rgba(209, 209, 209,  .3) 42.6%, rgba(182, 182, 182, .3) 79.19%, rgba(156, 156, 156, .3) 104.86%);
+    }
+
+    .p-home .p-home-carousel .carousel-inner .carousel-second-item > img {
+        src: url('../../asserts/login.jpg');
     }
 
     .p-home .p-home-carousel .carousel-inner .carousel-third-item .carousel-caption > h3 {

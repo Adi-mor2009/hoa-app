@@ -2,3 +2,8 @@
     background-color: rgb(178, 155, 124);
     padding: 20px;
 } */
+
+.c-navbar .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: lightskyblue !important;
+    font-weight: bold;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import './MainNavbar.css'
 
@@ -18,6 +18,7 @@ function MainNavbar({activeUser, onLogout}) {
                 <Nav className="ml-auto">
                     {!activeUser ? <Nav.Link href="#/login"><span style={{color: "blue"}}>Login</span></Nav.Link> : null}
                     {!activeUser ? <Nav.Link href="#/signup">Signup</Nav.Link> : null}
+                    {activeUser ? <Navbar.Text><span style={{color: "blue"}}>Hello {activeUser.name}</span></Navbar.Text> : null}
                     {activeUser ? <Nav.Link href="#" onClick={() => onLogout()}>Logout</Nav.Link> : null}
                 </Nav>
         </Navbar.Collapse>

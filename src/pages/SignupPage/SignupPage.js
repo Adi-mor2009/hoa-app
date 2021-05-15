@@ -73,7 +73,7 @@ function SignupPage({ activeUser, onLogin }) {
                             <Form.Label>Email address</Form.Label>
                             <InputGroup>
                                 <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1"><i class="bi bi-envelope-fill"></i></InputGroup.Text>
+                                    <InputGroup.Text id="basic-addon1"><i className="bi bi-envelope-fill"></i></InputGroup.Text>
                                 </InputGroup.Prepend>
                                 <Form.Control type="email" placeholder="Enter email"
                                     value={email} onChange={e => setEmail(e.target.value)} />
@@ -90,12 +90,12 @@ function SignupPage({ activeUser, onLogin }) {
                             <Form.Label>Password</Form.Label>
                             <InputGroup className="mb-3">
                                 <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1"><i class="bi bi-lock-fill"></i></InputGroup.Text>
+                                    <InputGroup.Text id="basic-addon1"><i className="bi bi-lock-fill"></i></InputGroup.Text>
                                 </InputGroup.Prepend>
                                 <Form.Control type="password" placeholder="Password"
                                     value={pwd} onChange={e => setPwd(e.target.value)} />
                                 <InputGroup.Append>
-                                    <InputGroup.Text id="basic-addon2"><i class="bi bi-unlock-fill"></i></InputGroup.Text>
+                                    <InputGroup.Text id="basic-addon2"><i className="bi bi-unlock-fill"></i></InputGroup.Text>
                                 </InputGroup.Append>
                             </InputGroup>
                         </Form.Group>
@@ -104,7 +104,7 @@ function SignupPage({ activeUser, onLogin }) {
                             <Form.Label>Name</Form.Label>
                             <InputGroup className="mb-3">
                                 <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1"><i class="bi bi-person-fill"></i></InputGroup.Text>
+                                    <InputGroup.Text id="basic-addon1"><i className="bi bi-person-fill"></i></InputGroup.Text>
                                 </InputGroup.Prepend>
 
                                 <Form.Control type="text" placeholder="Name"
@@ -116,7 +116,7 @@ function SignupPage({ activeUser, onLogin }) {
                             <Form.Label>Building Name</Form.Label>
                             <InputGroup className="mb-3">
                                 <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1"><i class="bi bi-house-fill"></i></InputGroup.Text>
+                                    <InputGroup.Text id="basic-addon1"><i className="bi bi-house-fill"></i></InputGroup.Text>
                                 </InputGroup.Prepend>
 
                                 <Form.Control type="text" placeholder="Building Name"
@@ -128,7 +128,7 @@ function SignupPage({ activeUser, onLogin }) {
                             <Form.Label>Address</Form.Label>
                             <InputGroup className="mb-3">
                                 <InputGroup.Prepend>
-                                    <InputGroup.Text id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></InputGroup.Text>
+                                    <InputGroup.Text id="basic-addon1"><i className="bi bi-geo-alt-fill"></i></InputGroup.Text>
                                 </InputGroup.Prepend>
 
                                 <Form.Control type="text" placeholder="Full Address"

@@ -1,6 +1,6 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import './TenantCard.css';
-import image from '../../asserts/man.png';
+import image from '../../asserts/man2.png';
 
 function TenantCard({tenant}){
     return(
@@ -17,6 +17,10 @@ function TenantCard({tenant}){
                             <Card.Text>
                                 Apartement: {tenant.apartement}
                             </Card.Text>
+                            {/* <div className="tenant-card-bottons">
+                                <Button variant="light"><i className="bi bi-pencil" style={{color: 'lightskyblue'}}></i></Button>
+                                <Button variant="light"><i className="bi bi-trash" style={{color: 'red'}}></i></Button>
+                            </div> */}
                         </Card.Body>
                     </Col>
                 </Row>    

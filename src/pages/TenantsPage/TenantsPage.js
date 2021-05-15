@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Accordion, Container } from 'react-bootstrap';
+import { Accordion, Button, Container } from 'react-bootstrap';
 import './TenantsPage.css'
 import image from '../../asserts/tenants.jpg';
 import { Redirect } from 'react-router';
@@ -49,16 +49,23 @@ function TenantsPage({ activeUser }) {
         (card.props.tenant.apartement+ '').includes(filterText)) : tenantsCards;
     }
 
+    function newTenant() {
+        console.log("Should add new tenant");
+    }
+
     return (
         <Container className="p-tenants">
             {/* <img  className="p-tenants-img" src={image}></img> */}
             <Filter
-                icon={<i class="bi bi-funnel-fill"></i>}
-                // <i class="bi bi-funnel-fill"></i><i class="bi bi-search"></i>
+                icon={<i className="bi bi-funnel-fill"></i>}
+                // <i className="bi bi-funnel-fill"></i><i className="bi bi-search"></i>
                 placeholder="Filter tenants by name or email or apartement..."
                 filterText={filterText}
                 filterTextChange={handleFilterTestChange}
             />
+            <div className="new-tenant">
+                <Button variant="link" onClick={newTenant}><i className="bi bi-plus-circle-fill" style={{color: 'lightskyblue'}}></i> Add New Tenant</Button>
+            </div>
             <HoaAccordion cards={filter()}></HoaAccordion>
         </Container>
     );

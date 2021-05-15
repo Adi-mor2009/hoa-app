@@ -1,0 +1,9 @@
+.p-tenants .new-tenant {
+    text-align: end;
+    padding: 10px;
+}
+
+.p-tenants .new-tenant .btn:focus {
+    outline: none;
+    box-shadow: none;
+}

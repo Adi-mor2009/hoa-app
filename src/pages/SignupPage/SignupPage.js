@@ -4,7 +4,6 @@ import { Redirect } from 'react-router';
 import './SignupPage.css'
 import Parse from 'parse';
 import UserModel from '../../model/UserModel';
-import image from '../../asserts/signup.jpg';
  
 
 function SignupPage({ activeUser, onLogin }) {

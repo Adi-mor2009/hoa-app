@@ -3,9 +3,6 @@ import { Alert, Button, Col, Container, Form, FormControl, InputGroup, Row, Spin
 import { Link, Redirect } from 'react-router-dom';
 import UserModel from '../../model/UserModel';
 import './LoginPage.css'
-import image from '../../asserts/login.jpg';
-import Parse from 'parse';
-import { MDBBtn, MDBCol, MDBContainer, MDBIcon, MDBInput, MDBRow } from "mdbreact";
 
 function LoginPage({ activeUser, onLogin }) {
 

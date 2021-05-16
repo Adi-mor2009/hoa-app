@@ -18,7 +18,6 @@ export default class UserModel {
 
     #parseUser  // storing the parseUser object as a private field (might need to use it)
     constructor(parseUser) {
-        debugger
         this.id = parseUser.id;
         this.name = parseUser.get("name");
         this.apartement = parseUser.get("apartement");
@@ -28,13 +27,42 @@ export default class UserModel {
         this.#parseUser = parseUser;
     }
 
-     // login is an async function that tries to login the user given the email and password.
+    // login is an async function that tries to login the user given the email and password.
     // If successfull it will resolve the promise with a UserModel instance of the logged in user
     // If unsuccessfull it will reject the promise with an appropriate error
     static async login(email, pwd) {
         const parseUser = await Parse.User.logIn(email, pwd);
         const activeUser = new UserModel(parseUser);
         return activeUser;
+    }
+
+    static async remove(id) {
+        const User = new Parse.User();
+        const query = new Parse.Query(User);
+
+        const userToDel = await query.get(id);
+        await userToDel.destroy();
+    }
+
+    static async get(id) {
+        const User = new Parse.User();
+        const query = new Parse.Query(User);
+
+        const parseUser = await query.get(id);
+        const user = new UserModel(parseUser);
+        return user;
+    }
+
+    static async update(id, email, name, apartement) {
+        const User = new Parse.User();
+        const query = new Parse.Query(User);
+
+        const userToEdit = await query.get(id);
+        userToEdit.set('username', email);
+        userToEdit.set('email', name);
+        userToEdit.set('apartement', apartement);
+
+        await userToEdit.save();
     }
 
     static logout() {
@@ -44,5 +72,5 @@ export default class UserModel {
     static activeUser() {
         return Parse.User.current();
     }
-} 
+}
 

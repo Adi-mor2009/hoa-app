@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react'
 import { Accordion, AccordionContext, Button, Card, useAccordionToggle } from 'react-bootstrap'
 import './HoaAccordion.css'
 
-export default function HoaAccordion({ cards }) {
+export default function HoaAccordion({cards, onDelete, onEdit}) {
 
     const [currentActiveKey, setCurrentActiveKey] = useState("0");
 
     const toggleActiveKey = (key) => {
         setCurrentActiveKey(currentActiveKey === key ? null : key);
     };
-
+    
     const accordionCards = cards.map((card, index) => <Accordion key={index.toString()} defaultActiveKey="0">
         <Card>
             <Card.Header>
@@ -23,8 +23,8 @@ export default function HoaAccordion({ cards }) {
                     {card.props.tenant.name}
                 </Accordion.Toggle>
                 <div className="tenant-card-bottons">
-                    <Button variant="light" onClick={alert}><i className="bi bi-pencil" style={{ color: 'lightskyblue', fontWeight: 'bold' }}></i></Button>
-                    <Button variant="light"><i className="bi bi-trash" style={{ color: 'red' }}></i></Button>
+                    <Button variant="light" onClick={() => onEdit(card.props.tenant.id)}><i className="bi bi-pencil" style={{ color: 'lightskyblue', fontWeight: 'bold' }}></i></Button>
+                    <Button variant="light" onClick={() => onDelete(card.props.tenant.id)}><i className="bi bi-trash" style={{ color: 'red' }}></i></Button>
                 </div>
             {/* <Card.Header>
                 <ContextAwareToggle eventKey={index.toString()}>{card.props.tenant.name}</ContextAwareToggle>

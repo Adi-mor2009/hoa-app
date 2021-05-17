@@ -2,9 +2,9 @@ import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import './HomePage.css';
 import image1 from '../../asserts/home_mobile.jpg';
-import image2 from '../../asserts/login_mobile.jpg';
+import image2 from '../../asserts/tenants_mobile.jpg';
 import image3 from '../../asserts/messages_mobile.jpg';
-import image4 from '../../asserts/issue.jpg';
+import image4 from '../../asserts/issue_mobile.jpg';
 import image5 from '../../asserts/vote_mobile.jpg';
 import image6 from '../../asserts/tenants.jpg';
 

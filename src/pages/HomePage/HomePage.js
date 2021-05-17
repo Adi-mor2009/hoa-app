@@ -1,11 +1,11 @@
 import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
 import './HomePage.css';
-import image1 from '../../asserts/three.jpg';
-import image2 from '../../asserts/dugma.jpg';
-import image3 from '../../asserts/messages.jpg';
+import image1 from '../../asserts/home_mobile.jpg';
+import image2 from '../../asserts/login_mobile.jpg';
+import image3 from '../../asserts/messages_mobile.jpg';
 import image4 from '../../asserts/issue.jpg';
-import image5 from '../../asserts/vote.jpg';
+import image5 from '../../asserts/vote_mobile.jpg';
 import image6 from '../../asserts/tenants.jpg';
 
 function HomePage(props) {
@@ -18,7 +18,7 @@ function HomePage(props) {
             </div> */}
             <div className="p-home-carousel">
                 <Carousel>
-                    {/* <Carousel.Item className="carousel-first-item" key={1}>
+                    <Carousel.Item className="carousel-first-item" key={1}>
                         <img
                             // className="d-block w-100"
                             src={image1}
@@ -28,7 +28,7 @@ function HomePage(props) {
                             <h3>HOA System</h3>
                             <p>Homeowner Association Management System - All you need for managing your building</p>
                         </Carousel.Caption>
-                    </Carousel.Item> */}
+                    </Carousel.Item>
                     <Carousel.Item className="carousel-second-item" interval={1000} key={2}>
                         <img
                             // className="d-block w-100"
@@ -41,7 +41,7 @@ function HomePage(props) {
                             <p>Add, remove and view tenants from the building account</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    {/* <Carousel.Item className="carousel-third-item" interval={1000} key={3}>
+                    <Carousel.Item className="carousel-third-item" interval={1000} key={3}>
                         <img
                             // className="d-block w-100"
                             src={image3}
@@ -76,7 +76,7 @@ function HomePage(props) {
                             <h3>Manage voting system</h3>
                             <p>Committe owner can manage votes, tenats can participate and more</p>
                         </Carousel.Caption>
-                    </Carousel.Item> */}
+                    </Carousel.Item>
                 </Carousel>
             </div>
         </Container>

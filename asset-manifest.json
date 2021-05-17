@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/hoa-app/static/css/main.5fa7b016.chunk.css",
-    "main.js": "/hoa-app/static/js/main.dc2054c6.chunk.js",
-    "main.js.map": "/hoa-app/static/js/main.dc2054c6.chunk.js.map",
+    "main.css": "/hoa-app/static/css/main.caf62c4d.chunk.css",
+    "main.js": "/hoa-app/static/js/main.5a69db61.chunk.js",
+    "main.js.map": "/hoa-app/static/js/main.5a69db61.chunk.js.map",
     "runtime-main.js": "/hoa-app/static/js/runtime-main.e84730e6.js",
     "runtime-main.js.map": "/hoa-app/static/js/runtime-main.e84730e6.js.map",
     "static/css/2.98cd3b20.chunk.css": "/hoa-app/static/css/2.98cd3b20.chunk.css",
@@ -12,18 +12,19 @@
     "static/js/3.be995abb.chunk.js.map": "/hoa-app/static/js/3.be995abb.chunk.js.map",
     "index.html": "/hoa-app/index.html",
     "static/css/2.98cd3b20.chunk.css.map": "/hoa-app/static/css/2.98cd3b20.chunk.css.map",
-    "static/css/main.5fa7b016.chunk.css.map": "/hoa-app/static/css/main.5fa7b016.chunk.css.map",
+    "static/css/main.caf62c4d.chunk.css.map": "/hoa-app/static/css/main.caf62c4d.chunk.css.map",
     "static/js/2.06fe9f1d.chunk.js.LICENSE.txt": "/hoa-app/static/js/2.06fe9f1d.chunk.js.LICENSE.txt",
     "static/media/bootstrap-icons.css": "/hoa-app/static/media/bootstrap-icons.0f69dcdb.woff",
-    "static/media/home_mobile.a04b3877.jpg": "/hoa-app/static/media/home_mobile.a04b3877.jpg",
+    "static/media/home_mobile.2256dc3c.jpg": "/hoa-app/static/media/home_mobile.2256dc3c.jpg",
     "static/media/issue.e5ac902a.jpg": "/hoa-app/static/media/issue.e5ac902a.jpg",
+    "static/media/issue_mobile.97988bdf.jpg": "/hoa-app/static/media/issue_mobile.97988bdf.jpg",
     "static/media/LoginPage.css": "/hoa-app/static/media/login.ffb2c68d.jpg",
-    "static/media/login_mobile.63229db0.jpg": "/hoa-app/static/media/login_mobile.63229db0.jpg",
     "static/media/logo.6ce24c58.svg": "/hoa-app/static/media/logo.6ce24c58.svg",
     "static/media/messages.195273f4.jpg": "/hoa-app/static/media/messages.195273f4.jpg",
     "static/media/messages_mobile.71aaa355.jpg": "/hoa-app/static/media/messages_mobile.71aaa355.jpg",
     "static/media/SignupPage.css": "/hoa-app/static/media/signup.6b35fcaf.jpg",
-    "static/media/tenants.445c05c2.jpg": "/hoa-app/static/media/tenants.445c05c2.jpg",
+    "static/media/tenants.e9ed01a3.jpg": "/hoa-app/static/media/tenants.e9ed01a3.jpg",
+    "static/media/tenants_mobile.9acf94e3.jpg": "/hoa-app/static/media/tenants_mobile.9acf94e3.jpg",
     "static/media/HomePage.css": "/hoa-app/static/media/three.99d9f95a.jpg",
     "static/media/vote.4ed8de48.jpg": "/hoa-app/static/media/vote.4ed8de48.jpg",
     "static/media/vote_mobile.99cb7a28.jpg": "/hoa-app/static/media/vote_mobile.99cb7a28.jpg"
@@ -32,7 +33,7 @@
     "static/js/runtime-main.e84730e6.js",
     "static/css/2.98cd3b20.chunk.css",
     "static/js/2.06fe9f1d.chunk.js",
-    "static/css/main.5fa7b016.chunk.css",
-    "static/js/main.dc2054c6.chunk.js"
+    "static/css/main.caf62c4d.chunk.css",
+    "static/js/main.5a69db61.chunk.js"
   ]
 }

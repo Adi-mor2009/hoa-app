@@ -9,8 +9,8 @@ export default class MessageModel {
         this.details = parseUser.get("details");
         this.priority = parseUser.get("priority");
         this.userId = parseUser.get("userId");
-        this.read = parseUser.get("read");
-        this.comment = parseUser.get("comment");
+        this.readBy = parseUser.get("readBy");
+        this.comments = parseUser.get("comments");
         this.buildingId = parseUser.get("buildingId");
         this.#parseUser = parseUser;
     }

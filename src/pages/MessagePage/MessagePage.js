@@ -39,7 +39,20 @@ function MessagePage({ activeUser }) {
 
     useEffect(() => {
         if (activeUser) {
+            const Message = Parse.Object.extend('Message');
+            const query = new Parse.Query(Message);
+            
+            const BuildingId = Parse.Object.extend("BuildingId");
+            const myBuildingId = new BuildingId();
+            myBuildingId.id = activeUser.buildingId.id;
 
+            // Just the objectId is enough to compare the object
+            query.equalTo("buildingId", myBuildingId);
+
+            query.find().then(results => {
+                // console.log(`Users found: ${JSON.stringify(results)}`);
+                setMessages(results.map(result => new MessageModel(result)));
+            });
         }
     }, [])
 
@@ -71,9 +84,6 @@ function MessagePage({ activeUser }) {
         myNewObject.set('title', title);
         myNewObject.set('details', details);
         myNewObject.set('priority', priority);
-        // myNewObject.set('userId', Parse.User.current());
-        // myNewObject.set('isRead', true);
-        // myNewObject.set('comment', 'A string');
         myNewObject.set('buildingId', activeUser.buildingId);
 
         myNewObject.save().then(
@@ -139,7 +149,7 @@ function MessagePage({ activeUser }) {
             options: [priorityOptions.IMPORTANT, priorityOptions.INFO],
             isRequired: true,
             value: priority,
-            function: (text) => { text == priorityOptions.IMPORTANT ? setPriority(0) : setPriority(1) }
+            function: (text) => { text == priorityOptions.IMPORTANT || text == "0" ? setPriority(0) : setPriority(1) }
         },
         // {
         //     controlId: "",

@@ -10,13 +10,13 @@
     object-fit: cover;
 } */
 
-.p-home .p-home-bg-img {
+/* .p-home .p-home-bg-img {
     background-image: url('../../asserts/three.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 400px;
-}
+} */
 
 .p-home > h1 {
     

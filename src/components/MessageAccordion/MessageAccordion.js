@@ -23,8 +23,8 @@ export default function MessageAccordion({cards, onDelete, onEdit, icon}) {
                     {card.props.message.title}
                 </Accordion.Toggle>
                 <div className="message-card-bottons">
-                    {{onEdit} && <Button variant="light" onClick={() => onEdit(card.props.message.id)}><i className="bi bi-pencil" style={{ color: 'lightskyblue', fontWeight: 'bold' }}></i></Button>}
-                    {{onDelete} && <Button variant="light" onClick={() => onDelete(card.props.message.id)}><i className="bi bi-trash" style={{ color: 'red' }}></i></Button>}
+                    {onEdit && <Button variant="light" onClick={() => onEdit(card.props.message.id)}><i className="bi bi-pencil" style={{ color: 'lightskyblue', fontWeight: 'bold' }}></i></Button>}
+                    {onDelete && <Button variant="light" onClick={() => onDelete(card.props.message.id)}><i className="bi bi-trash" style={{ color: 'red' }}></i></Button>}
                     {{icon} &&  <Button variant="light" disabled>{icon[card.props.message.priority]}</Button>}
                 </div>
             {/* <Card.Header>

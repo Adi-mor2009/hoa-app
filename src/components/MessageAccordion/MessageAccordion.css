@@ -22,3 +22,27 @@
     box-shadow: none;
 }
 
+.message-card-bottons {
+    position: relative;
+}
+#messages {
+    position: absolute;
+    color: black;
+    /* background-color: white; */
+    /* border-radius: 30%; */
+    right: 10%;
+    /* opacity: 0.5; */
+    bottom: 3%;
+    /* bottom: 40%; */
+}
+div > div > #dot {
+    /* width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white; */
+    position: absolute;
+    right: 10%;
+    bottom: 40%;
+    /* opacity: 0.8; */
+}
+

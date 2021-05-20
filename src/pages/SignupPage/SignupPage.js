@@ -65,7 +65,7 @@ function SignupPage({ activeUser, onLogin }) {
                 {/* <img  className="p-home-img" src={image}></img> */}
                 <div className="p-form-signup">
                     <h1>Welcome to HOA</h1>
-                    <p>Please fill the follwoing detais</p>
+                    <p>Please fill in the following details</p>
                     {showSignupError ? <Alert variant="danger">Error in Sign Up!</Alert> : null}
                     <Form onSubmit={signup}>
                         <Form.Group controlId="formBasicEmail">

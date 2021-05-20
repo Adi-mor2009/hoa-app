@@ -36,7 +36,7 @@ function App() {
       <HashRouter>
         <Switch>
           <Route exact path="/" >
-            <MainNavbar  activeUser={activeUser}  onLogout={() => setActiveUser(null)}/>
+            <MainNavbar  activeUser={activeUser}  onLogout={handleLogout}/>
             <HomePage/>
           </Route>
           {/* Using json <Route exact path="/login"><LoginPage activeUser={activeUser} users={users} onLogin={user => setActiveUser(user)}/></Route> */}

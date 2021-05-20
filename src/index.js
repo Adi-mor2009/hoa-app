@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Parse from 'parse';
+import "../node_modules/animate.css"
 
 
 Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL

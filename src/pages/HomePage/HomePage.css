@@ -18,22 +18,22 @@
     padding-bottom: 400px;
 } */
 
-.p-home > h1 {
+/* .p-home > h1 {
     
 }
 
 .p-home > p {
     
-}
+} */
 
 .p-home .temp{
     padding: 200px;
 }
 
-.p-home .p-home-carousel {
-    /* width: 100%;
-    margin: auto; */
-}
+/* .p-home .p-home-carousel {
+    width: 100%;
+    margin: auto;
+} */
 
 .p-home .p-home-carousel .carousel-inner .carousel-item > img {
     width: 100%;
@@ -54,7 +54,7 @@
     color: black; 
 }
 
-.p-home .p-home-carousel .carousel-inner .carousel-forth-item .carousel-caption > p{
+.p-home .p-home-carousel .carousel-inner .carousel-forth-item .carousel-caption{
     font-weight: bold;
     color: black; 
 }
@@ -63,6 +63,7 @@
     font-weight: bold;
     color: black; 
 }
+
 
 @media (min-width: 992px) {
     
@@ -81,8 +82,9 @@
         background-image: linear-gradient(90deg, rgba(255, 255, 255, .3) 0%, rgba(231, 231, 231, .3) 22.39%, rgba(209, 209, 209,  .3) 42.6%, rgba(182, 182, 182, .3) 79.19%, rgba(156, 156, 156, .3) 104.86%);
     }
 
-    /* .p-home .p-home-carousel .carousel-inner .carousel-second-item > img {
-        background: url('../../asserts/login.jpg') no-repeat;
+    /* .p-home .p-home-carousel .carousel-inner .carousel-second-item .carousel-caption {
+        margin-bottom: 5%; 
+        margin-right: 10%;
     } */
 
     .p-home .p-home-carousel .carousel-inner .carousel-third-item .carousel-caption > h3 {
@@ -93,6 +95,13 @@
     .p-home .p-home-carousel .carousel-inner .carousel-third-item .carousel-caption > p {
         padding: 100px;
         background-image: none;
+    }
+
+    .p-home .p-home-carousel .carousel-inner .carousel-forth-item .carousel-caption > h3{
+        font-weight: bold;
+        color: white; 
+        margin-bottom: 45%; 
+        margin-right: 10%;
     }
 
     .p-home .p-home-carousel .carousel-inner .carousel-fifth-item .carousel-caption > h3 {

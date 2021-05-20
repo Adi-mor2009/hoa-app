@@ -43,10 +43,10 @@ function HomePage(props) {
                         />}
                         <Carousel.Caption>
                             <h3>HOA System</h3>
-                            <p>Homeowner Association Management System - All you need for managing your building</p>
+                            <p>Homeowners Association Management System - Everything you need to manage your building</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item className="carousel-second-item" interval={1000} key={2}>
+                    <Carousel.Item className="carousel-second-item" interval={5000} key={2}>
                         {isTabletOrMobileDevice && <img
                             // className="d-block w-100"
                             src={image2}
@@ -59,11 +59,11 @@ function HomePage(props) {
                         />}
 
                         <Carousel.Caption>
-                            <h3>Manage tenants members</h3>
+                            <h3>Manage tenant members</h3>
                             <p>Add, remove and view tenants from the building account</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item className="carousel-third-item" interval={1000} key={3}>
+                    <Carousel.Item className="carousel-third-item" interval={5000} key={3}>
                         {isTabletOrMobileDevice && <img
                             // className="d-block w-100"
                             src={image3}
@@ -76,11 +76,11 @@ function HomePage(props) {
                         />}
 
                         <Carousel.Caption>
-                            <h3>Manage message system</h3>
-                            <p>Committe owner can post messages to tenants. Tenants can view, filter ...</p>
+                            <h3>Manage your messaging system</h3>
+                            <p>The committee owner can post notices to tenants with priority. Tenants can view, filter, add comments and get an indication of unread messages</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item className="carousel-forth-item" interval={1000} key={4}>
+                    <Carousel.Item className="carousel-forth-item" interval={5000} key={4}>
                         {isTabletOrMobileDevice && <img
                             // className="d-block w-100"
                             src={image4}
@@ -91,9 +91,9 @@ function HomePage(props) {
                             src={image9}
                             alt="Second slide"
                         />}
-                        <Carousel.Caption className="carousel-fifth-item" interval={1000} key={5}>
-                            <h3>Manage building issues</h3>
-                            <p>Tenants can report issues with priorty ...</p>
+                        <Carousel.Caption className="carousel-fifth-item" interval={5000} key={5}>
+                            <h3>Management of issues in the building</h3>
+                            <p>Tenants can report various issues with priorities</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -108,9 +108,9 @@ function HomePage(props) {
                             alt="Second slide"
                         />}
 
-                        <Carousel.Caption>
-                            <h3>Manage voting system</h3>
-                            <p>Committe owner can manage votes, tenats can participate and more</p>
+                        <Carousel.Caption className="carousel-six-item" interval={5000} key={6}>
+                            <h3>Voting system management</h3>
+                            <p>The committee owner can conduct votes by creating, tracking and publishing results. Tenants can see active votes and participate, tenants get a clear indication of a vote they did not vote, tenants can see the results</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

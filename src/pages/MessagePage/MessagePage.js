@@ -10,6 +10,7 @@ import Utils from '../../shared/Utils';
 import MessageModel from '../../model/MessageModel';
 import Parse from 'parse';
 import MessageAccordion from '../../components/MessageAccordion/MessageAccordion';
+import RemoveModal from '../../components/Modal/RemoveModal';
 
 
 function MessagePage({ activeUser }) {
@@ -41,7 +42,7 @@ function MessagePage({ activeUser }) {
         if (activeUser) {
             const Message = Parse.Object.extend('Message');
             const query = new Parse.Query(Message);
-            
+
             const BuildingId = Parse.Object.extend("BuildingId");
             const myBuildingId = new BuildingId();
             myBuildingId.id = activeUser.buildingId.id;
@@ -65,6 +66,40 @@ function MessagePage({ activeUser }) {
             card.props.message.details.toLowerCase().includes(filterText.toLowerCase())) : messagesCards;
     }
 
+    function markedAsRead(messageId) {
+        const Message = Parse.Object.extend('Message');
+        const query = new Parse.Query(Message);
+        // here you put the objectId that you want to update
+        query.get(messageId).then((object) => {
+            debugger
+            // object.set('readBy', [activeUser.id]);
+            if (!object.get("readBy").includes(activeUser.id)) {
+                object.set('readBy', object.get("readBy").concat(activeUser.id));
+                object.save().then((response) => {
+                    //here should call setMessages for render
+                    console.log('Updated Message', response);
+                }, (error) => {
+                    console.error('Error while updating Message', error);
+                });
+            }
+        });
+    }
+
+    // function addComment(messageId, comment) {
+    //     const Message = Parse.Object.extend('Message');
+    //     const query = new Parse.Query(Message);
+    //     // here you put the objectId that you want to update
+    //     query.get(messageId).then((object) => {
+    //         object.set('comments', [{userId: activeUser.id, userComments: [comment]}]);
+    //         object.save().then((response) => {
+    //             //here should call setMessages for render
+    //             console.log('Updated Message', response);
+    //         }, (error) => {
+    //             console.error('Error while updating Message', error);
+    //         });
+    //     });
+    // }
+
 
     function preperForMessageEdit(id) {
         setMessageForEdit(id);
@@ -72,8 +107,25 @@ function MessagePage({ activeUser }) {
     }
 
     function preperForMessageDelete(id) {
+        console.log("about to delete message " + id);
         setMessageForDel(id);
-        showModalRemoveMessage(true);
+        setShowModalRemoveMessage(true);
+    }
+
+    function handleDelete() {
+        const Message = Parse.Object.extend('Message');
+        const query = new Parse.Query(Message);
+        // here you put the objectId that you want to delete
+        query.get(messageForDel).then((object) => {
+            object.destroy().then((response) => {
+                console.log('Deleted Message', response);
+                //need to find message in messages by id
+                //setMessages(messages => messages.slice(0, index).concat(messages.slice(index + 1, messages.length)));
+                handleClose(Utils.operations.DELETE);
+            }, (error) => {
+                console.error('Error while deleting Message', error);
+            });
+        });
     }
 
     function handleCreate() {
@@ -84,6 +136,8 @@ function MessagePage({ activeUser }) {
         myNewObject.set('title', title);
         myNewObject.set('details', details);
         myNewObject.set('priority', priority);
+        myNewObject.set('readBy', []);
+        myNewObject.set('comments', []);
         myNewObject.set('buildingId', activeUser.buildingId);
 
         myNewObject.save().then(
@@ -178,12 +232,12 @@ function MessagePage({ activeUser }) {
             }
             <CreateModal show={showModalNewMessage} handleClose={handleClose} modalTitle="Add New Message" showError={showCreateError} error="Unable to create new message" handleSubmit={handleCreate} formAttributes={createFormAtt}></CreateModal>
             {isAdminUser &&
-                <MessageAccordion cards={filter()} onDelete={preperForMessageDelete} onEdit={preperForMessageEdit} icon={[<i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i>, <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i>]}></MessageAccordion>
+                <MessageAccordion cards={filter()} onDelete={preperForMessageDelete} onEdit={preperForMessageEdit} onRead={undefined} icon={[<i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i>, <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i>]}></MessageAccordion>
             }
             {!isAdminUser &&
-                <MessageAccordion cards={filter()} onDelete={undefined} onEdit={undefined} icon={[<i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i>, <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i>]}></MessageAccordion>
+                <MessageAccordion cards={filter()} onDelete={undefined} onEdit={undefined} onRead={markedAsRead} userId={activeUser.id} icon={[<i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i>, <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i>, <i class="bi bi-chat-left-text-fill"></i>]}></MessageAccordion>
             }
-            {/* icon={card.props.message.priority==0 ? <i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i>: <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i>} */}
+            <RemoveModal show={showModalRemoveMessage} handleClose={handleClose} modalTitle="Remove Message" showError={showRemoveError} error="Unable to remove message" handleSubmit={handleDelete} text="Are you sure you want to delete message?"></RemoveModal>
         </Container>
     );
 }

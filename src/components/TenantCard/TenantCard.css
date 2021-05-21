@@ -2,3 +2,30 @@
     margin: 2px;
     padding: 10px;
 }
+
+.c-tenant-card .card {
+    background-image: linear-gradient(rgb(240, 221, 188), rgb(174, 155, 123));
+    /* background-image: url('../../asserts/tenants.jpg'); */
+}
+
+div.col-md-8.c-tenant-info.col {
+    display:flex;
+    align-items: center;
+    color: white;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    .c-tenant-card .card-title {
+        font-size: xx-large;
+    }
+    div.col-md-8.c-tenant-info.col {
+        display:flex;
+        align-items: center;
+        color: white;
+        font-size: x-large;
+        font-family: cursive;
+        font-weight: bold;
+    }
+}

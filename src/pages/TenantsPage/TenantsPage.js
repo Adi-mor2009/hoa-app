@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Accordion, Alert, Button, Container, Form, InputGroup, Modal } from 'react-bootstrap';
+import { Accordion, Alert, Button, Col, Container, Form, Image, InputGroup, Modal, Row } from 'react-bootstrap';
 import './TenantsPage.css'
 import { Redirect } from 'react-router';
 import Filter from '../../components/Filter/Filter';
@@ -24,7 +24,7 @@ function TenantsPage({ activeUser }) {
     const [apartement, setApartement] = useState(undefined);
     const [tenantForDel, setTenantForDel] = useState(undefined);
     const [tenantForEdit, setTenantForEdit] = useState(undefined);
-    // const [img, setImg] = useState(null);
+    const [img, setImg] = useState(null);
 
     const operations = {
         CREATE: "create",
@@ -102,6 +102,13 @@ function TenantsPage({ activeUser }) {
         user.set('name', name);
         user.set('buildingId', activeUser.buildingId);
         user.set('password', pwd);
+        debugger
+        if(img){
+            user.set('img',new Parse.File(img.name, img));
+        }
+        // else{
+        //     user.set('img',{image});
+        // }
 
         const acl = new Parse.ACL();
         acl.setPublicWriteAccess(true);
@@ -175,13 +182,13 @@ function TenantsPage({ activeUser }) {
         setShowModalRemoveTenant(true);
     }
 
-    // function handleFileChange(e){
-    //     if (e.target.files.length === 1) {
-    //         setImg(e.target.files[0]);
-    //     } else {
-    //         setImg(null);
-    //     }
-    // }
+    function handleFileChange(e){
+        if (e.target.files.length === 1) {
+            setImg(e.target.files[0]);
+        } else {
+            setImg(null);
+        }
+    }
 
 
     return (
@@ -263,13 +270,13 @@ function TenantsPage({ activeUser }) {
                                 </Form.Control.Feedback>
                             </InputGroup>
                         </Form.Group>
-                        {/* <Form.Group as={Row} controlId="formHorizontalImg">
+                        <Form.Group as={Row} controlId="formHorizontalImg">
                             <Form.Label column sm={4}>Tenant Image:</Form.Label>
                             <Col>
                                 <Form.Control type="file" accept="image/*" onChange={handleFileChange} />
                             </Col>
                         </Form.Group>
-                        <Image src={img ? typeof img === 'object' ? URL.createObjectURL(img) : img : ""} /> */}
+                        <Image src={img ? typeof img === 'object' ? URL.createObjectURL(img) : img : ""} />
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>

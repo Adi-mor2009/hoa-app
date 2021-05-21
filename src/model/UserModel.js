@@ -24,6 +24,9 @@ export default class UserModel {
         this.email = parseUser.get("email") ? parseUser.get("email") : parseUser.get("username");
         this.role = parseUser.get("role");
         this.buildingId = parseUser.get("buildingId");
+        if(parseUser.get("img")){
+            this.img = parseUser.get("img").url();
+        }
         this.#parseUser = parseUser;
     }
 

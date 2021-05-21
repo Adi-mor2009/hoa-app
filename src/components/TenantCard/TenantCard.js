@@ -3,17 +3,19 @@ import './TenantCard.css';
 import image from '../../asserts/man2.png';
 
 function TenantCard({tenant}){
+    debugger
     return(
         <div className="c-tenant-card">
             <Card>
                 <Row className='no-gutters'>
-                    <Col className="col-md-4">
-                        <Card.Img variant="top" src={image} />
+                    <Col className="col-md-4 c-tenant-img">
+                        {!tenant.img && <Card.Img variant="top" src={image} />}
+                        {tenant.img && <Card.Img variant="top" src={tenant.img} />}
                     </Col>
-                    <Col className="col-md-8">
+                    <Col className="col-md-8 c-tenant-info">
                         <Card.Body>
                             <Card.Title>Name: {tenant.name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Email {tenant.email}</Card.Subtitle>
+                            <Card.Text>Email {tenant.email}</Card.Text>
                             <Card.Text>
                                 Apartement: {tenant.apartement}
                             </Card.Text>

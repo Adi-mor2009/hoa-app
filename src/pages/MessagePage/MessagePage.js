@@ -77,7 +77,7 @@ function MessagePage({ activeUser }) {
         query.get(messageId).then((object) => {
             debugger
             let messageComments = object.get("comments");
-            messageComments.push({userId: activeUser.id, userName: activeUser.name, dateCreated: Date.now(), userComments: comment });
+            messageComments.push({userId: activeUser.id, userName: activeUser.name, userImg: activeUser.img, dateCreated: Date.now(), userComments: comment });
             // let userIndex = messageComments.findIndex((c => c.userId === activeUser.id));
             // if (userIndex!==undefined && userIndex!==-1) {
             //     messageComments[userIndex].userComments.push(comment);

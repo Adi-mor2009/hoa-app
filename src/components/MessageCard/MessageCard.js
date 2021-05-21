@@ -3,10 +3,18 @@ import './MessageCard.css';
 import image from '../../asserts/messages.png';
 
 function MessageCard({ message, onEnter, commentText, onTextChange }) {
-    
-    //const comments = [{ userId: "xxx", userName: "Dudu", dateCreated:"", userComments: "I would like to have a pool on the roof pls" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }]
+
+    //const comments = [{ userId: "xxx", userName: "Dudu", userImg:"", dateCreated:"", userComments: "I would like to have a pool on the roof pls" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }]
     // {new Date(comment.dateCreated).toString()}
-    const commentsToShow = message.comments.sort((a,b)=>a.dateCreated-b.dateCreated).map(comment => <div><i class="bi bi-person-circle"></i> {comment.userName}: {comment.userComments}</div>)
+    debugger
+    //const commentsToShow = message.comments.sort((a, b) => a.dateCreated - b.dateCreated).map(comment => <div><i class="bi bi-person-circle"></i> {comment.userName}: {comment.userComments}</div>)
+    const commentsToShow = message.comments.sort((a, b) => a.dateCreated - b.dateCreated).map(
+        (comment) => 
+            <div>
+                {!comment.userImg && <i class="bi bi-person-circle"></i>} 
+                {comment.userImg && <img src={comment.userImg}/> } 
+                {comment.userName}: {comment.userComments}
+            </div>);
     return (
         <div className="c-message-card">
             <Card>
@@ -28,8 +36,8 @@ function MessageCard({ message, onEnter, commentText, onTextChange }) {
                                 {commentsToShow}
                             </Card.Text>
                             <Form.Group controlId="commentTextArea" className="userCommentArea">
-                                <Form.Control as="textarea" rows={4} type="text" placeholder="Add comment..." value={commentText} onChange = {e => onTextChange(e.target.value)}
-                                    onKeyPress={e => e.key === 'Enter' && e.target.value.length > 0 ? onEnter(message.id, e.target.value) : null}/>
+                                <Form.Control as="textarea" rows={4} type="text" placeholder="Add comment..." value={commentText} onChange={e => onTextChange(e.target.value)}
+                                    onKeyPress={e => e.key === 'Enter' && e.target.value.length > 0 ? onEnter(message.id, e.target.value) : null} />
                             </Form.Group>
                         </Col>
 

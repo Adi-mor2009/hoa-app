@@ -3,7 +3,6 @@ import { Accordion, AccordionContext, Button, Card, useAccordionToggle } from 'r
 import './MessageAccordion.css'
 
 export default function MessageAccordion({cards, onDelete, onEdit, onRead, userId, icon}) {
-    debugger
     const accordionCards = cards.map((card, index) => <Accordion key={index.toString()} defaultActiveKey="0">
         <Card>
             <Card.Header>

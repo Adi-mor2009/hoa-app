@@ -29,6 +29,7 @@ function MessagePage({ activeUser }) {
     const [img, setImg] = useState(undefined);
     const [messageForDel, setMessageForDel] = useState(undefined);
     const [messageForEdit, setMessageForEdit] = useState(undefined);
+    const [commetText, setCommentText] = useState("");
 
     const isAdminUser = activeUser && activeUser.role == 0 ? true : false;
     const priorityOptions = {
@@ -36,7 +37,7 @@ function MessagePage({ activeUser }) {
         INFO: "info"
     }
 
-    const messagesCards = messages !== undefined ? messages.map((message, index) => <MessageCard key={index.toString()} message={message}></MessageCard>) : [];
+    const messagesCards = messages !== undefined ? messages.map((message, index) => <MessageCard key={index.toString()} message={message} onEnter={newComment} commentText={commetText} onTextChange={(text) => setCommentText(text)}></MessageCard>) : [];
 
     useEffect(() => {
         if (activeUser) {
@@ -66,13 +67,40 @@ function MessagePage({ activeUser }) {
             card.props.message.details.toLowerCase().includes(filterText.toLowerCase())) : messagesCards;
     }
 
+    function newComment(messageId, comment) {
+        console.log("comment: " + comment + "for message: " + messageId);
+        setCommentText("");
+        const Message = Parse.Object.extend('Message');
+        const query = new Parse.Query(Message);
+        // let d = new Date();
+        // const n = d.toLocaleString();
+        query.get(messageId).then((object) => {
+            debugger
+            let messageComments = object.get("comments");
+            messageComments.push({userId: activeUser.id, userName: activeUser.name, dateCreated: Date.now(), userComments: comment });
+            // let userIndex = messageComments.findIndex((c => c.userId === activeUser.id));
+            // if (userIndex!==undefined && userIndex!==-1) {
+            //     messageComments[userIndex].userComments.push(comment);
+            //     messageComments[userIndex].timestamp.push(Date.now());
+            // }
+            // else {
+            //     messageComments.push({userId: activeUser.id, timestamp: [Date.now()], userComments: [comment] });
+            // }
+            object.set('comments',messageComments);
+            object.save().then((response) => {
+                //here should call setMessages for render
+                console.log('Updated Message', response);
+            }, (error) => {
+                console.error('Error while updating Message', error);
+            });
+        });
+    }
+
     function markedAsRead(messageId) {
         const Message = Parse.Object.extend('Message');
         const query = new Parse.Query(Message);
         // here you put the objectId that you want to update
         query.get(messageId).then((object) => {
-            debugger
-            // object.set('readBy', [activeUser.id]);
             if (!object.get("readBy").includes(activeUser.id)) {
                 object.set('readBy', object.get("readBy").concat(activeUser.id));
                 object.save().then((response) => {

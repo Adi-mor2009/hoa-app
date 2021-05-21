@@ -167,6 +167,9 @@ function MessagePage({ activeUser }) {
         myNewObject.set('readBy', []);
         myNewObject.set('comments', []);
         myNewObject.set('buildingId', activeUser.buildingId);
+        if(img){
+            myNewObject.set('img',new Parse.File(img.name, img));
+        }
 
         myNewObject.save().then(
             (result) => {
@@ -188,6 +191,7 @@ function MessagePage({ activeUser }) {
                 setTitle("");
                 setDetails("");
                 setPriority(1);
+                setImg(undefined);
                 break;
             case Utils.operations.UPDATE:
                 setShowModalEditMessage(false);
@@ -196,6 +200,7 @@ function MessagePage({ activeUser }) {
                 setTitle("");
                 setDetails("");
                 setPriority(1);
+                setImg(undefined);
                 break;
             case Utils.operations.DELETE:
                 setShowModalRemoveMessage(false);
@@ -244,6 +249,14 @@ function MessagePage({ activeUser }) {
         // }
     ]
 
+    function handleFileChange(e){
+        if (e.target.files.length === 1) {
+            setImg(e.target.files[0]);
+        } else {
+            setImg(null);
+        }
+    }
+
     return (
         <Container className="p-message">
             {/* <img  className="p-message-img" src={image}></img> */}
@@ -258,7 +271,7 @@ function MessagePage({ activeUser }) {
                     <Button variant="link" onClick={() => setShowModalNewMessage(true)}><i className="bi bi-plus-circle-fill" style={{ color: 'lightskyblue' }}></i> Add New Message</Button>
                 </div>
             }
-            <CreateModal show={showModalNewMessage} handleClose={handleClose} modalTitle="Add New Message" showError={showCreateError} error="Unable to create new message" handleSubmit={handleCreate} formAttributes={createFormAtt}></CreateModal>
+            <CreateModal show={showModalNewMessage} handleClose={handleClose} modalTitle="Add New Message" showError={showCreateError} error="Unable to create new message" handleSubmit={handleCreate} formAttributes={createFormAtt} img={img} handleFileChange={handleFileChange}></CreateModal>
             {isAdminUser &&
                 <MessageAccordion cards={filter()} onDelete={preperForMessageDelete} onEdit={preperForMessageEdit} onRead={undefined} icon={[<i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i>, <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i>]}></MessageAccordion>
             }

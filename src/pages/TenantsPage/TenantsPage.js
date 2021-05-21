@@ -24,7 +24,7 @@ function TenantsPage({ activeUser }) {
     const [apartement, setApartement] = useState(undefined);
     const [tenantForDel, setTenantForDel] = useState(undefined);
     const [tenantForEdit, setTenantForEdit] = useState(undefined);
-    const [img, setImg] = useState(null);
+    const [img, setImg] = useState(undefined);
 
     const operations = {
         CREATE: "create",
@@ -72,6 +72,7 @@ function TenantsPage({ activeUser }) {
                 setPwd("");
                 setName("");
                 setApartement(undefined);
+                setImg(undefined);
                 break;
             case operations.UPDATE:
                 setShowModalEditTenant(false);
@@ -81,6 +82,7 @@ function TenantsPage({ activeUser }) {
                 setPwd("");
                 setName("");
                 setApartement(undefined);
+                setImg(undefined);
                 break;
             case operations.DELETE:
                 setShowModalRemoveTenant(false);
@@ -102,7 +104,6 @@ function TenantsPage({ activeUser }) {
         user.set('name', name);
         user.set('buildingId', activeUser.buildingId);
         user.set('password', pwd);
-        debugger
         if(img){
             user.set('img',new Parse.File(img.name, img));
         }

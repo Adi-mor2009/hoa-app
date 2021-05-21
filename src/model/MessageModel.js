@@ -12,6 +12,9 @@ export default class MessageModel {
         this.readBy = parseUser.get("readBy");
         this.comments = parseUser.get("comments");
         this.buildingId = parseUser.get("buildingId");
+        if(parseUser.get("img")){
+            this.img = parseUser.get("img").url();
+        }
         this.#parseUser = parseUser;
     }
 }

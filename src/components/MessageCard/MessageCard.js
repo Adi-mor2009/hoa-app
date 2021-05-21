@@ -9,10 +9,10 @@ function MessageCard({ message, onEnter, commentText, onTextChange }) {
     debugger
     //const commentsToShow = message.comments.sort((a, b) => a.dateCreated - b.dateCreated).map(comment => <div><i class="bi bi-person-circle"></i> {comment.userName}: {comment.userComments}</div>)
     const commentsToShow = message.comments.sort((a, b) => a.dateCreated - b.dateCreated).map(
-        (comment) => 
+        (comment) =>
             <div>
-                {!comment.userImg && <i class="bi bi-person-circle"></i>} 
-                {comment.userImg && <img src={comment.userImg}/> } 
+                {!comment.userImg && <i class="bi bi-person-circle"></i>}
+                {comment.userImg && <img src={comment.userImg} />}
                 {comment.userName}: {comment.userComments}
             </div>);
     return (
@@ -21,7 +21,8 @@ function MessageCard({ message, onEnter, commentText, onTextChange }) {
                 <Card.Body>
                     <Row className='no-gutters'>
                         <Col className="col-md-2">
-                            <Card.Img variant="top" src={image} />
+                            {!message.img && <Card.Img variant="top" src={image} />}
+                            {message.img && <Card.Img variant="top" src={message.img} />}
                         </Col>
                         <Col className="col-md-4 p-2">
                             <Card.Text>Details: {message.details}</Card.Text>

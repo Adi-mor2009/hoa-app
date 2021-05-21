@@ -1,17 +1,17 @@
 import React from 'react'
-import { Alert, Button, Form, Modal } from 'react-bootstrap';
+import { Alert, Button, Col, Form, Image, Modal, Row } from 'react-bootstrap';
 import Utils from '../../shared/Utils';
 
-export default function CreateModal({show, handleClose, modalTitle, showError, error, handleSubmit, formAttributes}) {
+export default function CreateModal({ show, handleClose, modalTitle, showError, error, handleSubmit, formAttributes, img, handleFileChange }) {
 
-    const form = formAttributes.map((attribute, index) => 
+    const form = formAttributes.map((attribute, index) =>
         <Form.Group key={index.toString()} controlId={attribute.controlId}>
             <Form.Label>{attribute.label}</Form.Label>
-            {attribute.type != "select"  &&  
+            {attribute.type != "select" &&
                 <Form.Control type={attribute.type} placeholder={attribute.placeholder} required={attribute.isRequired}
-                value={attribute.value} onChange={e => {attribute.function(e.target.value)}} />}
-            {attribute.type == "select"  &&  
-               <Form.Control as="select" onChange={e => {attribute.function(e.target.value)}}>
+                    value={attribute.value} onChange={e => { attribute.function(e.target.value) }} />}
+            {attribute.type == "select" &&
+                <Form.Control as="select" onChange={e => { attribute.function(e.target.value) }}>
                     <option>{attribute.options[0]}</option>
                     <option>{attribute.options[1]}</option>
                 </Form.Control>}
@@ -26,6 +26,13 @@ export default function CreateModal({show, handleClose, modalTitle, showError, e
                 {showError ? <Alert variant="danger">{error}</Alert> : null}
                 <Form>
                     {form}
+                    <Form.Group as={Row} controlId="formHorizontalImg">
+                        <Form.Label column sm={4}>Message Image:</Form.Label>
+                        <Col>
+                            <Form.Control type="file" accept="image/*" onChange={handleFileChange} />
+                        </Col>
+                    </Form.Group>
+                    <Image src={img ? typeof img === 'object' ? URL.createObjectURL(img) : img : ""} />
                 </Form>
             </Modal.Body>
             <Modal.Footer>

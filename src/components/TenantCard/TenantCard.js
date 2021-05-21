@@ -1,6 +1,6 @@
 import { Button, Card, Col, Row } from "react-bootstrap";
 import './TenantCard.css';
-import image from '../../asserts/man2.png';
+import image from '../../asserts/windowman.png';
 
 function TenantCard({tenant}){
     debugger

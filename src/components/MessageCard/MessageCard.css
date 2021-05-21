@@ -9,7 +9,13 @@
 }
 
 .userComment > div > img {
-    width:5%;
+    width: 10%;
+}
+
+@media (min-width: 992px) {
+    .userComment > div > img {
+        width: 5%;
+    }
 }
 
 /* .userCommentArea {

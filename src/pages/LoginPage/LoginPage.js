@@ -12,7 +12,7 @@ function LoginPage({ activeUser, onLogin }) {
     const [loading, setLoading] = useState(false);
 
     if (activeUser) {
-        return <Redirect to="/dashboard" />
+        return activeUser.role == 0 ? <Redirect to="/tenants" /> :<Redirect to="/messages" />
     }
 
     async function login(e) {

@@ -35,6 +35,14 @@
     margin: auto;
 } */
 
+.p-home .p-home-carousel .carousel-control-next {
+    filter: invert(100%);
+}
+
+.p-home .p-home-carousel .carousel-control-prev {
+    filter: invert(100%);
+}
+
 .p-home .p-home-carousel .carousel-inner .carousel-item > img {
     width: 100%;
 }

@@ -1,17 +1,18 @@
 import React, { useContext, useState } from 'react'
 import { Accordion, AccordionContext, Button, Card, useAccordionToggle } from 'react-bootstrap'
+import ContextAwareToggle from '../ContextAwareToggle/ContextAwareToggle'
 import './MessageAccordion.css'
 
 export default function MessageAccordion({cards, onDelete, onEdit, onRead, userId, icon}) {
     const accordionCards = cards.map((card, index) => <Accordion key={index.toString()} defaultActiveKey="0">
         <Card>
             <Card.Header>
-                {(!onRead || card.props.message.readBy.includes(userId)) &&<Accordion.Toggle as={Button} variant="link" eventKey={index.toString()}>
+                {(!onRead || card.props.message.readBy.includes(userId)) &&<ContextAwareToggle as={Button} variant="link" eventKey={index.toString()}>
                     {card.props.message.title}
-                </Accordion.Toggle>}
-                {(onRead && !card.props.message.readBy.includes(userId)) &&<Accordion.Toggle as={Button} variant="link" eventKey={index.toString()} onClick={() => onRead(card.props.message.id)}>
+                </ContextAwareToggle>}
+                {(onRead && !card.props.message.readBy.includes(userId)) &&<ContextAwareToggle as={Button} variant="link" eventKey={index.toString()} onClick={() => onRead(card.props.message.id)}>
                     {card.props.message.title}
-                </Accordion.Toggle>}
+                </ContextAwareToggle>}
                 <div className="message-card-bottons">
                     {onEdit && <Button variant="light" onClick={() => onEdit(card.props.message.id)}><i className="bi bi-pencil" style={{ color: 'lightskyblue', fontWeight: 'bold' }}></i></Button>}
                     {onDelete && <Button variant="light" onClick={() => onDelete(card.props.message.id)}><i className="bi bi-trash" style={{ color: 'red' }}></i></Button>}

@@ -5,15 +5,14 @@ import image from '../../asserts/messages.png';
 function MessageCard({ message, onEnter, commentText, onTextChange }) {
 
     //const comments = [{ userId: "xxx", userName: "Dudu", userImg:"", dateCreated:"", userComments: "I would like to have a pool on the roof pls" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }, { user: "Alex", comment: "Pls fix the front door" }, { user: "Hila", comment: "keep the good work! You are awsome!" }]
-    // {new Date(comment.dateCreated).toString()}
-    debugger
+    // {new Date(comment.dateCreated).toString()}.toLocaleTimeString('it-IT')
     //const commentsToShow = message.comments.sort((a, b) => a.dateCreated - b.dateCreated).map(comment => <div><i class="bi bi-person-circle"></i> {comment.userName}: {comment.userComments}</div>)
     const commentsToShow = message.comments.sort((a, b) => a.dateCreated - b.dateCreated).map(
         (comment) =>
             <div>
                 {!comment.userImg && <i class="bi bi-person-circle"></i>}
                 {comment.userImg && <img src={comment.userImg} />}
-                {comment.userName}: {comment.userComments}
+                <span style={{fontWeight: 'bold' }}>{comment.userName}</span>[{new Date(comment.dateCreated).toLocaleTimeString('il-IL')}]: {comment.userComments}
             </div>);
     return (
         <div className="c-message-card">
@@ -24,12 +23,12 @@ function MessageCard({ message, onEnter, commentText, onTextChange }) {
                             {!message.img && <Card.Img variant="top" src={image} />}
                             {message.img && <Card.Img variant="top" src={message.img} />}
                         </Col>
-                        <Col className="col-md-4 p-2">
-                            <Card.Text>Details: {message.details}</Card.Text>
+                        <Col className="col-md-4 p-2 c-message-info">
+                            <Card.Text><span style={{fontWeight: 'bold' }}>Details: </span> {message.details}</Card.Text>
                             {message.priority == 0 &&
-                                <Card.Text>Priority: Important <i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i></Card.Text>}
+                                <Card.Text><span style={{fontWeight: 'bold' }}>Priority: </span> Important <i class="bi bi-info-circle-fill" style={{ color: 'red' }}></i></Card.Text>}
                             {message.priority == 1 &&
-                                <Card.Text>Priority: Information <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i></Card.Text>}
+                                <Card.Text><span style={{fontWeight: 'bold' }}>Priority: </span> Information <i class="bi bi-info-circle-fill" style={{ color: 'lightskyblue' }}></i></Card.Text>}
                         </Col>
                         <Col className="col-md-6 border-left p-2">
                             <Card.Title>Comments</Card.Title>

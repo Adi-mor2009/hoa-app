@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     font-weight: bold;
+    flex-flow: row wrap !important;
 }
 
 .c-message-accordion .accordion .card-header .btn-link{
@@ -24,6 +25,7 @@
 
 .message-card-bottons {
     position: relative;
+    margin-left: auto;
 }
 #messages {
     position: absolute;

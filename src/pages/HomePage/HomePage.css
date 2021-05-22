@@ -43,6 +43,13 @@
     filter: invert(100%);
 }
 
+.p-home .p-home-carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
 .p-home .p-home-carousel .carousel-inner .carousel-item > img {
     width: 100%;
 }

@@ -28,7 +28,7 @@ export default function MessageAccordion({cards, onDelete, onEdit, onRead, userI
         </Card>
     </Accordion>)
     return (
-        <div className="c-hoa-accordion">
+        <div className="c-message-accordion">
             {accordionCards}
         </div>
     )

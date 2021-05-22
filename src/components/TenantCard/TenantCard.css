@@ -4,8 +4,8 @@
 }
 
 .c-tenant-card .card {
-    /* background-image: linear-gradient(rgb(240, 221, 188), rgb(174, 155, 123)); */
-    background-image: url('../../asserts/wall1.jpg');
+    background-image: linear-gradient(rgb(240, 221, 188), rgb(174, 155, 123));
+    /* background-image: url('../../asserts/wall1.jpg'); */
 }
 
 div.col-md-8.c-tenant-info.col {
@@ -19,6 +19,10 @@ div.col-md-8.c-tenant-info.col {
 @media (min-width: 992px) {
     .c-tenant-card .card-title {
         font-size: xx-large;
+    }
+    .c-tenant-card .card {
+        /* background-image: linear-gradient(rgb(240, 221, 188), rgb(174, 155, 123)); */
+        background-image: url('../../asserts/wall1.jpg');
     }
     div.col-md-8.c-tenant-info.col {
         display:flex;
